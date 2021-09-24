@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>California Hotel Homepage</title>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+    </head>
+    <body>
+        <h1>California Hotel Reservation Waiting List System</h1>
+        
+        
+        <div class="InfoHub">
+            <label>Current available seats in WL:</label>
+            <label class="waitingListLoad"></label>
+        </div>
+
+        <div class="AddToWL">
+            <label for="guestName">Enter the guest name: </label>
+            <input type="text" id="guestNameToAdd" class="guestNameToAdd">
+            <br>
+            <label for="guestName">Enter the guest phone number: </label>
+            <input type="text" id="guestPhNumToAdd" class="guestPhNumToAdd">
+            <input type="submit" value="Add to Waiting List" class="submitAdd">
+        </div>
+
+        <div class="RemoveFromWL">
+            <label>Remove the guest from the Waiting List: </label>
+            <input type="submit" value="Remove" class = "submitRemove">
+        </div>
+
+        <div class="DisplayTable">
+            <input type="submit" value="Show WL Table">
+        </div>
+
+        <div class = "WLtable">
+            <table>
+                <thead>
+                    <th>Serial No.</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Time Stamp</th>
+                </thead>
+                <tbody id = "myTbody"></tbody>
+            </table>
+        </div>
+        <div class = "BackToHomepage">
+            <input type = "submit" value = "Back to homepage">
+        </div>
+        
+        
+        
+        <script src = "main.js"></script>
+    </body>
+</html>
