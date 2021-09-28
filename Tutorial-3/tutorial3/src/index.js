@@ -1,85 +1,113 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './style.css';
+import './style.css';
 
-    function Square(props){
-      return (
-        <button className="square" onClick = {props.onClick}>
-           {props.value}
-        </button>
-      );
-    }
-  
-  
-  class Board extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            squares : Array(9).fill(null),
-        };
-    }
-
-    handleClick(i) {
-        const squares = this.state.squares.slice(); // Create a deep copy of squares.
-        squares[i] = 'X';
-        this.setState({squares: squares});
-    }
-
-    renderSquare(i) {
-      return (
-      <Square 
-        value = {this.state.squares[i]}
-        onClick = {() => this.handleClick(i)}    
-    />
-    );
-    }
-  
-    render() {
-      const status = 'Next player: X';
-  
-      return (
-        <div>
-          <div className="status">{status}</div>
-          <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
-          </div>
-        </div>
-      );
-    }
+  class DisplayFreeSlot extends React.Component {
+      render() {
+          return (
+            <div class="InfoHub">
+            <label>Current available seats in WL:</label>
+            <label class="waitingListLoad"> 20 </label>
+            </div>
+          );
+      }
   }
-  
-  class Game extends React.Component {
-    render() {
-      return (
-        <div className="game">
-          <div className="game-board">
-            <Board />
-          </div>
-          <div className="game-info">
-            <div>{/* status */}</div>
-            <ol>{/* TODO */}</ol>
-          </div>
-        </div>
-      );
+
+  class AddCustomer extends React.Component {
+      render() {
+          return (
+            <div class="AddToWL">
+                <label for="guestName"> Enter the guest name: </label>
+                <input type="text" id="guestNameToAdd" class="guestNameToAdd"></input>
+              <br></br>
+                <label for="guestName">Enter the guest phone number: </label>
+                <input type="text" id="guestPhNumToAdd" class="guestPhNumToAdd"></input>
+                <input type="submit" value="Add to Waiting List" class="submitAdd"></input>
+            </div>
+          );
+        }
     }
-  }
+
+    class DeleteCustomer extends React.Component {
+        render() {
+            return (
+            <div class="RemoveFromWL">
+                <label>Remove the guest from the Waiting List: </label>
+                <input type="submit" value="Remove" class = "submitRemove"></input>
+            </div>
+            );
+        }
+    }
+
+    class DisplayCustomer extends React.Component {
+        render() {
+          return (
+            <div class="DisplayTable">
+            <input type="submit" value="Show WL Table"></input>
+            </div>
+          );
+        }
+    }
+
+    class WLTableRow extends React.Component {
+      render() {
+        return (
+          <tr>
+            <td> {this.props.serialNo} </td>
+            <td> {this.props.name} </td>
+            <td> {this.props.phoneNum} </td>
+            <td> {this.props.time} </td>
+          </tr>
+        );
+      }
+    }
+
+    class WLTable extends React.Component {
+        render() {
+          return (
+            <div>
+              <div class = "WLtable">
+                <table>
+                    <thead>
+                        <th>Serial No.</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Time Stamp</th>
+                    </thead>
+                    <tbody id = "myTbody">
+                      <WLTableRow serialNo = {1} name = "Cristiano Ronaldo" phoneNum = "1234567" time = {new Date().toLocaleTimeString()}/> 
+                      <WLTableRow serialNo = {2} name = "Leo Messi" phoneNum = "1234567" time = {new Date().toLocaleTimeString()}/> 
+                    </tbody>
+                </table>
+              </div>
+              <div class = "BackToHomepage">
+                <input type = "submit" value = "Back to homepage"></input>
+              </div>
+            </div>
+          );
+        }
+    }
+
+    class DisplayHomePage extends React.Component {
+      render() {
+        return (
+          <React.Fragment>
+            <h1>California Hotel Reservation Waiting List System</h1>
+            <DisplayFreeSlot />
+            <AddCustomer />
+            <DeleteCustomer />
+            <DisplayCustomer />
+            <WLTable />
+          </React.Fragment>
+        );
+      }
+    }
+    
   
   // ========================================
   
   ReactDOM.render(
-    <Game />,
+    <DisplayHomePage />,
     document.getElementById('root')
   );
   

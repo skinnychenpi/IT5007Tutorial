@@ -1,0 +1,68 @@
+body {
+    background-color: rgb(192, 218, 226);
+}
+
+input[type=submit] {
+background-color: #57a6db;
+border: none;
+color: white;
+padding: 8px 16px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+
+div {
+    margin: auto;
+    width : 50%;
+}
+
+.waitingListLoad {
+    font-size: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color :rgb(255, 94, 94)
+}
+
+label {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 { color: #d54d7b; 
+font-family: "Great Vibes", cursive; 
+font-size: 55px; 
+line-height: 100px; 
+font-weight: normal; 
+margin-bottom: 0px; 
+margin-top: 40px; 
+text-align: center; 
+text-shadow: 0 1px 1px #fff; 
+}
+
+input[type=text], select {
+    width: 20%;
+    padding: 5px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    width : 100%;
+    align-content: center;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {background-color: rgb(255, 230, 252);}
+
+
+th {
+    background-color: #57a6db;
+    color: white;
+  }
