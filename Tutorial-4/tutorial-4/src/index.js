@@ -184,6 +184,9 @@ class WebPage extends React.Component {
 
         var newWL = this.state.WL.slice();
         newWL.shift();
+        for (var i = 0; i < newWL.length; i++) {
+            newWL[i].serialNo--;
+        }
         this.setState({WL: newWL});
     }
 
