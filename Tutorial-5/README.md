@@ -10,6 +10,8 @@ Step3: type in `npm start` in the terminal on your Linux to start the project.
 `script/initMongo.js`, `server/server.js` and the `react-scirpt start` will run.)
 
 # Remark
+## Docker port configuration
+Please make sure if you are using docker, the 3000 and 5000 port are exposed.
 ## MongoDB port configuration
 I've changed the configuration file such that my mongod server is running at port 27018, 
 because there is another mongod server running at default port in another docker container.
