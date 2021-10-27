@@ -15,7 +15,7 @@ I've changed the configuration file such that my mongod server is running at por
 because there is another mongod server running at default port in another docker container.
 Therefore, it's **very likely** that when testing **scirpt/initMongo.js**, **scirpt/tryMongo.js**, **server/server.js**, you will encounter connection problems.
 
-The solution is to start mongod server use `sudo systemstl start mongod` first on your machine, and then go into these three files: 
+The solution is to start mongod server use `sudo systemctl start mongod` first on your machine, and then go into these three files: 
 
 **scirpt/initMongo.js**, **scirpt/tryMongo.js**, **server/server.js**
 
