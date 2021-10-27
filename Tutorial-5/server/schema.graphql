@@ -1,0 +1,26 @@
+scalar GraphQLDate
+
+type Guest {
+  serial: Int!
+  name: String!
+  phNum: String!
+  time: GraphQLDate!
+}
+
+input GuestInputs {
+  name: String!
+  phNum: String!
+}
+
+##### Top level(Query and Mutation) declarations:
+type Query {
+  about: String!
+  guestList: [Guest!]!
+  freeSeats: Int!
+}
+
+type Mutation {
+  setAboutMessage(message: String!): String
+  guestAdd(guest: GuestInputs!): Guest!
+  guestDelete: Guest! 
+}
