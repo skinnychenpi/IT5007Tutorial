@@ -1,43 +1,44 @@
-# it5007tut6
+# Guide to Execute Tutorial 6
 
-president is apolloclient folder;
-api is the server folder, port 5000.
+## Remark
+./president is apollo-client folder;
+./api is the server folder, the server will run at port 5000.
 
-On server side:
+## Steps to run the project:
+**On server side:**
 
-mkdir -p /data/db
+Step 1: You need to start the mongod server first.
 
-screen mongod
+Step 2: `cd /api`
 
-Ctrl a+d
+`npm install`
 
-cd /api
+`mongo issuetracker scripts/init.mongo.js`
 
-npm install
+`npm start`
 
-mongo issuetracker scripts/init.mongo.js
+Then the server will run at port 5000.
 
-npm start
+**On the client side:**
 
-Then it connect to port 5000.
+under ./president folder
 
-On the client side:
+Step 1: You need to change the IP adress of link in RNApp.js file to your machine IP adress
 
-under president folder
+Step 2: Install necessary packages:
+`npm install -g react-native-cli`
 
-change the IP adress of link in RNApp.js file to your machine IP adress
+`npm install apollo-boost;`
 
-npm install -g react-native-cli
+`npm install react-apollo;`
 
-npm install apollo-boost;
-npm install react-apollo;
-npm install graphql;
-npm install graphql-tag;
+`npm install graphql;`
 
-npx react-native run-android
+`npm install graphql-tag;`
 
-add some records on Android and then go to http://localhost:5000/graphql and type 
-query { issueList {
-        name}
-}
-to see name
+Step 3: Start the project
+`npx react-native run-android`
+
+
+
+
